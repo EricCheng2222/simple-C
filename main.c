@@ -48,13 +48,13 @@ void cmp(int *a, int *b, n){
 void minus(int *a, int *b, n){
     // this function is a = a - b
     int borrow = 0;
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n-1; i++){
         if(a[i] < b[i])
             borrow = 1;
         else
             borrow = 0;
         a[i] = borrow*10 + a[i] - b[i];
-        
+        a[i+1] = a[i+1] - borrow;
     }
 }
 
